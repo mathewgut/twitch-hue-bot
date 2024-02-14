@@ -1,6 +1,7 @@
 <h1>Hue Chatbot</h1>
 <h3>What is Hue</h3>  
 <p>This bot is a personal project utilizing generative AI and Natural Language Processing to enhance the chatting expirence, interactivity, and engagement on Twitch.</p>
+<p>This bot offers iterative improvements compared to the previous jeeves project</p>
 <h3>Goal and process</h3>
 <p>The main goal of the bot is to blend the line between chatter and chatbot.</p>
 <p>Hue works by scanning all incoming messages for a mention of hue or ravhue (no matter the casing). Through a gguf Llama2 variant for faster inference and less ram utilization. A users message will (in hopes) be replied to in a conversational way.</p>
