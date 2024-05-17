@@ -268,7 +268,7 @@ class Bot(commands.Bot):
         # try and except to handle potential errors
         try:
             # sending most played songs within specified time period and @-ing user who requested
-            await ctx.send(f"{ctx.author.name} here are Raven's recent track on repeat: {liked()}")
+            await ctx.send(f"{ctx.author.name} here are the streamer's recent track on repeat: {liked()}")
             #await asyncio.sleep(self.cooldown)
         # if error, send message and error
         except Exception as e:
