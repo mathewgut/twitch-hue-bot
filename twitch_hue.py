@@ -74,7 +74,7 @@ async def llm_reply(message, name):
             context = msg_history[name]
             # send to context matching system using most recent msg from bot to user, and current msg user to bot
             acc_context = context_match_adv(context, message)
-            prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in ItszRaven's live stream. Topics and the nature of questions may change drastically. Do not get too strung up on previous context. Keep your response short, do not explain your answer unless asked.<> Topic is potentially related to this message: {acc_context}. Your last message was: {msg_history[name][pos_len]}. The user's last message was: {reply_history[name][pos_len]}. <>  <</SYS>> [INST] {message} [/INST]"
+            prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in the streamer's live stream. Topics and the nature of questions may change drastically. Do not get too strung up on previous context. Keep your response short, do not explain your answer unless asked.<> Topic is potentially related to this message: {acc_context}. Your last message was: {msg_history[name][pos_len]}. The user's last message was: {reply_history[name][pos_len]}. <>  <</SYS>> [INST] {message} [/INST]"
             # function to nest inside of run_in_executor to allow for bot use during task
             def load_model_and_generate_response(prompt):
                 # defining parameters and specific model
@@ -85,7 +85,7 @@ async def llm_reply(message, name):
            
         # if bot has only sent one message
         elif len(msg_history[name]) == 1:
-            prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in ItszRaven's live stream. Topics and the nature of questions may change drastically. Do not get too strung up on previous context. Keep your response short, do not explain your answer unless asked.<> Your last message to User: {msg_history[name][0]} <> <</SYS>> [INST] {message} [/INST]"
+            prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in the streamer's live stream. Topics and the nature of questions may change drastically. Do not get too strung up on previous context. Keep your response short, do not explain your answer unless asked.<> Your last message to User: {msg_history[name][0]} <> <</SYS>> [INST] {message} [/INST]"
             # function to nest inside of run_in_executor to allow for bot use during task
             def load_model_and_generate_response(prompt):
                 # defining parameters and specific model
@@ -96,7 +96,7 @@ async def llm_reply(message, name):
     
     # if there is no msg history between user and bot                                                                                                  
     else:
-        prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in ItszRaven's live stream. Keep your response short, do not explain your answer unless asked. <</SYS>> [INST] {message} [/INST]"
+        prompt = f"<<SYS>>Act as Hue. A Twitch chat bot who gives short reactionary replies to/about incoming chats in the streamer's live stream. Keep your response short, do not explain your answer unless asked. <</SYS>> [INST] {message} [/INST]"
         # function to nest inside of run_in_executor to allow for bot use during task
         def load_model_and_generate_response(prompt):
             # defining parameters and specific model
