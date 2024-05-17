@@ -212,7 +212,7 @@ class Bot(commands.Bot):
         while True:
             # ensuring the bot is only sending the message to the authorised channel
             chan = bot.get_channel(chan_list[0])
-            await chan.send('For community and good vibes, join GVG: https://discord.gg/RUxshtmvMj To get annoying notifications when I go live; join my personal discord: https://discord.gg/CPmehW8')
+            await chan.send('')
             # this holds the loop so it will only start again after timer finishes (in seconds)
             await asyncio.sleep(3600)     
     
@@ -496,7 +496,7 @@ class Bot(commands.Bot):
     # sends link to hue commands list
     @commands.command()
     async def help(self, ctx: commands.Context):
-        await ctx.send(f'@{ctx.author.name} my commands can be found here: https://rubberduk.ca/2023/10/24/hue-commands/')
+        await ctx.send(f'@{ctx.author.name} my commands can be found here: ')
     
 
 
